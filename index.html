@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Historias</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header principal -->
+        <header class="header">
+            <h1>📚 Generador de Historias</h1>
+            <p>Crea historias únicas con solo unos clics</p>
+        </header>
+
+        <!-- Formulario de generación -->
+        <section class="form-section">
+            <form id="storyForm" class="story-form">
+                <div class="form-group">
+                    <label for="wordCount">Número de palabras:</label>
+                    <input 
+                        type="number" 
+                        id="wordCount" 
+                        name="wordCount" 
+                        min="50" 
+                        max="2000" 
+                        value="300" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="creativityLevel">Nivel de creatividad:</label>
+                    <select id="creativityLevel" name="creativityLevel" required>
+                        <option value="conservador">Conservador</option>
+                        <option value="creativo" selected>Creativo</option>
+                        <option value="locura">Locura de creatividad</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="genre">Género:</label>
+                    <select id="genre" name="genre" required>
+                        <option value="">Selecciona un género</option>
+                        <option value="fantasia">Fantasía</option>
+                        <option value="ciencia_ficcion">Ciencia Ficción</option>
+                        <option value="misterio">Misterio</option>
+                        <option value="romance">Romance</option>
+                        <option value="aventura">Aventura</option>
+                        <option value="terror">Terror</option>
+                        <option value="comedia">Comedia</option>
+                        <option value="drama">Drama</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="genre">Categoría:</label>
+                    <select id="category" name="category" required>
+                        <option value="todos">Todos</option>
+                        <option value="adolescente">Adolescente</option>
+                        <option value="infantil">Infantil</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggestions">Sugerencias (opcional):</label>
+                    <textarea 
+                        id="suggestions" 
+                        name="suggestions" 
+                        placeholder="Describe el ambiente, personajes, o cualquier idea que tengas en mente..."
+                        rows="3"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Generar Historia</span>
+                    <span class="btn-loading" style="display: none;">
+                        <span class="spinner"></span>
+                        Generando...
+                    </span>
+                </button>
+            </form>
+        </section>
+
+        <!-- Área de resultados -->
+        <section id="resultsSection" class="results-section" style="display: none;">
+            <div class="results-header">
+                <h2>Tu Historia</h2>
+                <button id="copyBtn" class="copy-btn" title="Copiar historia">
+                    📋 Copiar
+                </button>
+            </div>
+            <div id="storyContent" class="story-content">
+                <!-- Aquí se mostrará la historia generada -->
+            </div>
+        </section>
+
+        <!-- Área de error -->
+        <section id="errorSection" class="error-section" style="display: none;">
+            <div class="error-content">
+                <h3>❌ Error</h3>
+                <p id="errorMessage"></p>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html> 
